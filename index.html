@@ -8,44 +8,51 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="/imagens/emote.png">
 </head>
-<body class="h-screen bg-[url(/imagens/fundo.webp)] bg-cover bg-right flex flex-col">
-    <header class="z-10">
+<body class="">
 
-        <nav class="container mx-auto flex justify-between items-center py-8 font-serif p-4 text-2xl">
-            <a href="index.html" class="font-bold text-gray-100">Berna Denúncias</a>
+    <div class="relative min-h-screen bg-[url(/imagens/fundo.webp)] bg-cover bg-right flex flex-col">
 
-            <ul class="flex space-x-4 text-gray-300">
-                <li><a href="info.html">Informações</a></li>
-                <li><a href="sobreNos.html">Sobre nós</a></li>
-                <li><a href="denuncia.html" class="p-2 border rounded py-1 px-2 bg-[#ffffff20]">Denuncie já!</a></li>
-            </ul>
-        </nav>
+        <div class="absolute inset-0 bg-[#00000060] z-0"></div>
 
-    </header>
+        <header class="z-10">
 
-    <main class="z-10 flex-1 p-3 container mx-auto flex justify-center items-center">
+            <nav class="container mx-auto flex justify-between items-center py-8 font-serif p-4 text-2xl">
+                <a href="index.html" class="font-bold text-gray-100">Berna Denúncias</a>
 
-        <section class="text-gray-300 items-center h-200 container flex-1">
+                <ul class="flex space-x-4 text-gray-300">
+                    <li><a href="info.html">Informações</a></li>
+                    <li><a href="sobreNos.html">Sobre nós</a></li>
+                    <li><a href="denuncia.html" class="p-2 border rounded py-1 px-2 bg-[#ffffff20]">Denuncie já!</a></li>
+                </ul>
+            </nav>
 
-            <h3 class="text-shadow-lg text-5xl font-serif font-bold">Denúncie toda e qualquer injustiça!</h3>
+        </header>
 
-            <h4 class="text-2xl font-serif my-3">O lugar ideal para denunciar a verdade.</h4>
+        <main class="z-10 flex-1 p-3 container mx-auto flex justify-center items-center">
 
-            <div class="flex space-x-8">
+            <section class="text-gray-300 items-center h-200 container flex-1">
 
-                <a href="denuncia.html" class="text-2xl p-2 border rounded py-1 px-2 bg-[#ffffff20]">Denuncie já!</a>
+                <h3 class="text-shadow-lg text-5xl font-serif font-bold">Denúncie toda e qualquer injustiça!</h3>
 
-            </div>
-        </section>
+                <h4 class="text-2xl font-serif my-3">O lugar ideal para denunciar a verdade.</h4>
 
-    </main>
+                <div class="flex space-x-8">
 
-    <footer class="z-10 text-center p-6 text-gray-100">
+                    <a href="denuncia.html" class="text-2xl p-2 border rounded py-1 px-2 bg-[#ffffff20]">Denuncie já!</a>
 
-        <h3>&copy; 2025 Berna Denúncias - Todosos Direitos Reservados</h3>
+                </div>
+            </section>
 
-    </footer>
+        </main>
 
-    <div class="absolute size-full bg-[#00000060] z-0"></div>
+        <footer class="z-10 text-center p-6 text-gray-100 flex">
+
+            <h3 class="flex-1">&copy; 2025 Berna Denúncias - Todos os Direitos Reservados</h3>
+            <a href="login.html" class="border rounded py-1 px-2 bg-[#ffffff20]">Admin Login</a>
+
+        </footer>
+
+    </div>
+    
 </body>
 </html>
