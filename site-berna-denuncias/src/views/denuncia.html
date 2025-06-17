@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berna Denúncias</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="/imagens/emote.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="">
 
-    <div class="relative min-h-screen bg-[url(/imagens/fundo.webp)] bg-cover bg-right flex flex-col">
+    <div class="relative min-h-screen flex flex-col bg-cover bg-right bg-no-repeat" style="background-image: url('/imagens/fundo.webp');">
 
         <div class="absolute inset-0 bg-[#00000060] z-0"></div>
 
         <header class="z-10">
-
             <nav class="container mx-auto flex justify-between items-center py-8 font-serif p-4 text-2xl">
                 <a href="index.html" class="font-bold text-gray-100">Berna Denúncias</a>
 
@@ -25,34 +23,35 @@
                     <li><a href="denuncia.html" class="p-2 border rounded py-1 px-2 bg-[#ffffff20]">Denuncie já!</a></li>
                 </ul>
             </nav>
-
         </header>
 
-        <main class="z-10 flex-1 p-3 container mx-auto flex justify-center items-center">
+        <main class="z-10 container mx-auto mt-10 flex-1 flex justify-center items-center">
 
-            <section class="text-gray-300 items-center h-200 container flex-1">
+            <section class="py-2 md:grid-cols-2 gap-8 mt-10">
 
-                <h3 class="text-shadow-lg text-5xl font-serif font-bold">Denúncie toda e qualquer injustiça!</h3>
+                <form class="bg-white p-8 shadow-md rounded-2xl w-[90vw] max-w-xl" id="form-denuncia">
 
-                <h4 class="text-2xl font-serif my-3">O lugar ideal para denunciar a verdade.</h4>
+                    <h3 class="text-shadow-lg text-4xl font-serif font-bold text-center">Digite a sua Denúncia:</h3>
 
-                <div class="flex space-x-8">
+                    <div class="p-4">
+                        <textarea id="txt-denuncia" class="border bg-gray-200 border-black w-full h-48 p-4 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
 
-                    <a href="denuncia.html" class="text-2xl p-2 border rounded py-1 px-2 bg-[#ffffff20]">Denuncie já!</a>
+                    <div class="text-center">
+                        <input type="submit" value="enviar" class="border border-black rounded py-1 px-2 bg-gray-200 text-2xl">
+                    </div>
+                </form>
 
-                </div>
             </section>
 
         </main>
 
-        <footer class="z-10 text-center p-6 text-gray-100 flex">
-
+        <footer class="z-10 text-center p-6 text-gray-100 flex justify-between items-center container mx-auto">
             <h3 class="flex-1">&copy; 2025 Berna Denúncias - Todos os Direitos Reservados</h3>
             <a href="login.html" class="border rounded py-1 px-2 bg-[#ffffff20]">Admin Login</a>
-
         </footer>
 
     </div>
-    
+
 </body>
 </html>
