@@ -1,7 +1,9 @@
 import { addDoc, collection } from "@firebase/firestore";
 import { db } from "./firebase";
 
-document.getElementById('form-denuncia').addEventListener('submit', async () => {
+document.getElementById('form-denuncia').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
     const denuncia = document.getElementById('txt-denuncia').value;
     const denunciaStatus = await fazerDenuncia(denuncia);
     

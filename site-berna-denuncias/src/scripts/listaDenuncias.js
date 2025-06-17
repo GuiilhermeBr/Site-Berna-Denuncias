@@ -3,7 +3,7 @@ import { db } from "./firebase";
 
 const denuncias = await getDenuncias();
 
-if (!denuncias) {
+if (denuncias) {
     const denunciasList = document.getElementById('denunciasList');
 
     denuncias.forEach((denuncia) => {
@@ -17,28 +17,35 @@ if (!denuncias) {
 
         const divDeletarDenuncia = document.createElement('div');
         divDeletarDenuncia.className = 'text-center';
+
         const botaoDeletarDenuncia = document.createElement('a');
-        botaoDeletarDenuncia.className = 'bg-gray-200 border border-gray-400 text-center text-xl p-2 border rounded py-1 px-2';
+        botaoDeletarDenuncia.className = 'bg-gray-200 border border-gray-400 text-center text-xl p-2 border rounded py-1 px-2 hover:cursor-pointer';
         botaoDeletarDenuncia.innerHTML = 'Excluir';
         botaoDeletarDenuncia.onclick = () => {
             deleteDenuncia(denuncia.id)
         };
+        divDeletarDenuncia.append(botaoDeletarDenuncia);
+        blocoDenuncia.append(divDeletarDenuncia);
 
         denunciasList.appendChild(blocoDenuncia);
     });
 }
 
 async function getDenuncias() {
-    const querySnapshot = await getDocs(collection(db, "users"));
+    const querySnapshot = await getDocs(collection(db, "denuncias"));
     const listaDenuncias = [];
 
     querySnapshot.forEach((doc) => {
         const fulldoc = { id: doc.id, ...doc.data() }
         listaDenuncias.push(fulldoc);
     });
+    
+    console.log(listaDenuncias)
+    return listaDenuncias;
 }
 
 async function deleteDenuncia(idDenuncia) {
     await deleteDoc(doc(db, 'denuncias', idDenuncia));
+    window.location.reload();
 }
 

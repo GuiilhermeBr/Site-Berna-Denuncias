@@ -1,6 +1,8 @@
 import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
 
-document.getElementById('form-login').addEventListener('submit', async () => {
+document.getElementById('form-login').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
     const email = document.getElementById('input-email').value;
     const senha = document.getElementById('input-senha').value;
     const login = await signIn(email, senha);
@@ -13,17 +15,20 @@ document.getElementById('form-login').addEventListener('submit', async () => {
 });
 
 async function signIn(email, password) {
+    let loginSuccessful = false;
+
     const auth = getAuth();
     await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log('Login successfull');
-            return true;
+            loginSuccessful = true;
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
 
-            console.error('Um erro ocorreu ao fazer o login', `[${errorCode}] ${errorMessage}`);
-            return false;
+            console.error('Um erro ocorreu ao fazer o login' + `[${errorCode}] ${errorMessage}`);
         });
+    
+        return loginSuccessful;
 }
