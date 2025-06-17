@@ -4,8 +4,14 @@ import { db } from "./firebase";
 document.getElementById('form-denuncia').addEventListener('submit', async () => {
     const denuncia = document.getElementById('txt-denuncia').value;
     const denunciaStatus = await fazerDenuncia(denuncia);
-
-    if (!denunciaStatus) {
+    
+    if (denunciaStatus) {
+        alert("Denúncia registrada com sucesso!")
+        
+        setTimeout(() => {
+            window.location.href = '/index.html';
+        }, 3000);
+    } else {
         alert('Ocorreu um erro ao fazer a denúncia.')
     }
 });
