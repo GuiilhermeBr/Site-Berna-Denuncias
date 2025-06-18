@@ -1,5 +1,5 @@
 import { addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { db } from "./firebase";
+import { db } from "./firebase.js";
 
 document.getElementById('form-denuncia').addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -9,10 +9,7 @@ document.getElementById('form-denuncia').addEventListener('submit', async (event
     
     if (denunciaStatus) {
         alert("Denúncia registrada com sucesso!")
-        
-        setTimeout(() => {
-            window.location.href = '/index.html';
-        }, 3000);
+        window.location.href = '/index.html';
     } else {
         alert('Ocorreu um erro ao fazer a denúncia.')
     }
