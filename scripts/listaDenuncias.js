@@ -1,4 +1,4 @@
-import { collection, deleteDoc, doc, getDocs } from "@firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { db } from "./firebase";
 
 const denuncias = await getDenuncias();

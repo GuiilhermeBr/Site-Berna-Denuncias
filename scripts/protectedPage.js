@@ -1,4 +1,4 @@
-import { onAuthStateChanged, signOut } from "@firebase/auth";
+import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { auth } from "./firebase";
 
 const paginasProtegidas = ['/listaDenuncias.html'];

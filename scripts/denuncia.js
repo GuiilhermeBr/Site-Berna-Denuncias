@@ -1,4 +1,4 @@
-import { addDoc, collection } from "@firebase/firestore";
+import { addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { db } from "./firebase";
 
 document.getElementById('form-denuncia').addEventListener('submit', async (event) => {
