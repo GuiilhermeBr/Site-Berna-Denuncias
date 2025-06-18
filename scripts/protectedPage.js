@@ -23,12 +23,7 @@ onAuthStateChanged(auth, (user) => {
         const denuncieButton = document.createElement('a');
         denuncieButton.className = 'p-2 border rounded py-1 px-2 bg-[#ffffff20]';
         denuncieButton.innerHTML = 'Denuncie já!';
-
-        if (window.location.pathname === '/' | window.location.pathname === '/index.html') {
-            denuncieButton.href = 'src/views/denuncia.html';
-        } else {
-            denuncieButton.href = 'denuncia.html';
-        }
+        denuncieButton.href = 'denuncia.html';
 
         newLi.appendChild(denuncieButton);
 
@@ -36,16 +31,9 @@ onAuthStateChanged(auth, (user) => {
     } else if (user) {
         const headerNav = document.getElementById('headerNav');
         const newLi = document.createElement('li');
-        if (window.location.pathname === '/' | window.location.pathname === '/index.html') {
-            newLi.innerHTML = `
-                <a href="src/views/listaDenuncias.html" class="p-2 border rounded py-1 px-2 bg-[#ffffff20]">Lista de Denúncias</a>
-            `;
-        } else {
-            newLi.innerHTML = `
-                <a href="listaDenuncias.html" class="p-2 border rounded py-1 px-2 bg-[#ffffff20]">Lista de Denúncias</a>
-            `;
-        }
-
+        newLi.innerHTML = `
+            <a href="listaDenuncias.html" class="p-2 border rounded py-1 px-2 bg-[#ffffff20]">Lista de Denúncias</a>
+        `;
 
         const logOutButtonLi = document.createElement('li');
         const logOutButton = document.createElement('a');
